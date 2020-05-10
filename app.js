@@ -12,6 +12,7 @@ $(document).ready(function () {
 
     localStorage.setItem("cities", JSON.stringify(cities));
 
+    $("#cities").html("");
     for (var i = 0; i < cities.length; i++) {
       $("#cities").append(`
       <li>${cities[i]}</li>
@@ -53,13 +54,13 @@ $(document).ready(function () {
     });
     $.ajax({
       method: "GET",
-      url: `http://api.openweathermap.org/data/2.5/forecast?q=${userInput}&appid=c19859ebb61ccce6f0cbf52c315b53a3`,
+      url: `http://api.openweathermap.org/data/2.5/forecast?q=${userInput}&appid=c19859ebb61ccce6f0cbf52c315b53a3&units=imperial`,
     }).then(function (response) {
       for (var i = 0; i < response.list.length; i += 8) {
         $("#forecast").append(`
           <div class="card">
             <div class="card-body"></div>
-            <p>Temperature: ${response.list[i].main.temp}</p>
+            <p>Temperature: ${response.list[i].main.temp} F</p>
           </div>
         `);
       }
