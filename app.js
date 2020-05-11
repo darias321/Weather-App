@@ -18,6 +18,9 @@ $(document).ready(function () {
       <li>${cities[i]}</li>
     `);
     }
+    $(document).on("click", "li", function (event) {
+      console.log($(this).text());
+    });
 
     $("#userInput").val("");
 
