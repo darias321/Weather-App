@@ -19,7 +19,8 @@ $(document).ready(function () {
     `);
 
       $("li").click(function (event) {
-        console.log("Li has been clicked on");
+        $("input").val($(this).text());
+        $("#submitBtn").click();
       });
     }
 
