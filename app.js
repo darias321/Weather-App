@@ -2,6 +2,7 @@ $(document).ready(function () {
   var userInput = "";
   var apiKey = "c19859ebb61ccce6f0cbf52c315b53a3";
   var cityName = "";
+  $("#day").html(moment().format("MMM DD, YYYY"));
 
   $("#submitBtn").on("click", function (event) {
     event.preventDefault();
