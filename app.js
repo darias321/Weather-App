@@ -17,10 +17,11 @@ $(document).ready(function () {
       $("#cities").append(`
       <li>${cities[i]}</li>
     `);
+
+      $("li").click(function (event) {
+        console.log("Li has been clicked on");
+      });
     }
-    $(document).on("click", "li", function (event) {
-      console.log($(this).text());
-    });
 
     $("#userInput").val("");
 
