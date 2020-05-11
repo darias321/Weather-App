@@ -16,9 +16,8 @@ $(document).ready(function () {
     $("#cities").html("");
     for (var i = 0; i < cities.length; i++) {
       $("#cities").append(`
-      <li>${cities[i]}</li>
-    `);
-
+      <li>${cities[i]}</li>  
+      `);
       $("li").click(function (event) {
         $("input").val($(this).text());
         $("#submitBtn").click();
@@ -43,7 +42,7 @@ $(document).ready(function () {
       console.log("Pressure:", response.main.pressure);
 
       $("#main").append(`
-
+      <div>
           <h1>${cityName}</h1>
           <p>Temperature: ${response.main.temp} F</p>
           <p>Pressure: ${response.main.pressure}</p>
@@ -62,11 +61,14 @@ $(document).ready(function () {
       method: "GET",
       url: `http://api.openweathermap.org/data/2.5/forecast?q=${userInput}&appid=c19859ebb61ccce6f0cbf52c315b53a3&units=imperial`,
     }).then(function (response) {
-      for (var i = 0; i < response.list.length; i += 8) {
+      for (var i = 0; i < response.list.length; i += 5) {
         $("#forecast").append(`
           <div class="card">
             <div class="card-body"></div>
             <p>Temperature: ${response.list[i].main.temp} F</p>
+            <p>Pressure: ${response.list[i].main.pressure}</p>
+            <p>Humidity: ${response.list[i].main.humidity}</p>
+
           </div>
         `);
       }
