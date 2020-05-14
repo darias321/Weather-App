@@ -24,20 +24,25 @@
    
     </nav>
    <br>
-<h5>Search for a city:</h5>
-    <form>
-      <input type="text" id="userInput" />
-      <button id="submitBtn">Search</button>
-    </form>
-  <br>
-    <ul id="cities"></ul>
-      </div>
-    </div>
 
-    <div class="card">
-      <div id="main" class="card-body"></div>
-    </div>
-    <div id="forecast"></div>
+   <div class="row">
+     <div class="col-xs-12 col-md-4 col-lg-3">
+        <h5>Search for a city:</h5>
+        <form>
+          <input type="text" id="userInput" />
+          <button id="submitBtn">Search</button>
+        </form>
+        <br>
+        <ul id="cities" class="list-group"></ul>
+      </div>
+      <div class="col-xs-12 col-md-8 col-lg-9">
+        <div class="card">
+          <div id="main" class="card-body"></div>
+        </div>
+        <div id="forecast" class="row"></div>
+      </div>
+   </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
