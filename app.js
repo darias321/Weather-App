@@ -67,7 +67,7 @@ $(document).ready(function () {
       $("#forecast").html("<h3>Forecast</h3>");
       for (var i = 0; i < response.list.length; i += 8) {
         $("#forecast").append(`
-          <div class="col-xs-12 col-md-4 col-lg-3">
+          <br> <div class="col-xs-12 col-md-4 col-lg-3">
             <div class="card">
               <div class="card-body"></div>
               <p>Temperature: ${response.list[i].main.temp} F</p>
